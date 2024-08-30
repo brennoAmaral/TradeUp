@@ -1,15 +1,14 @@
-import cacheConfig from "@/core/view/cache/cache-config";
+import cacheConfig from "@/core/domain/cache/cache-config";
 import LoginPage from "@/core/view/pages/login/login";
-import { themeConfig } from "@/core/view/theme/theme-config";
+import ThemeProvider from "@/core/view/theme/theme-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { PaperProvider } from "react-native-paper";
 
 export default function LoginScreen() {
   return (
     <QueryClientProvider client={cacheConfig}>
-      <PaperProvider theme={themeConfig}>
+      <ThemeProvider>
         <LoginPage />
-      </PaperProvider >
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
