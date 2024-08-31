@@ -1,17 +1,14 @@
-import { darkTheme } from "@/theme/theme-config";
-import useTheme from "@/theme/use-theme";
+import useInputRegister from "@/hooks/components/use-input-register";
 import { Control, Controller, FieldValues } from "react-hook-form";
-import { Text, TextInput, View } from "react-native";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import SvgEye from "../svgs/eye-svg";
 import inputRegisterStyle from "./input-register-style";
 import { InputRegisterParams } from "./input-register-type";
 
 
-export default function InputRegister<fields extends FieldValues>({  form, nameField, placeHolder, secureTextEntry=false, iconLeft, iconRight, readonly = false }: InputRegisterParams<fields>) {
-  const { colors } = useTheme()
-  const errors = form.formState.errors
-  const errorMessage = errors?.[nameField]?.message ? errors?.[nameField]?.message : undefined
-  const borderColor = errorMessage ? darkTheme.colors.error : darkTheme.colors.primary
-  const { container, input, inputContainer } = inputRegisterStyle
+export default function InputRegister<fields extends FieldValues>({ form, nameField, placeHolder, iconLeft, iconRight, readonly = false, secureTextEntry = false, maxLength = 100, }: InputRegisterParams<fields>) {
+  const { container, input } = inputRegisterStyle
+  const { borderColor, colors, themedInputContainer, errorMessage, isSecure, setIsSecure } = useInputRegister({ form, nameField })
 
   return (
     <Controller
@@ -22,19 +19,24 @@ export default function InputRegister<fields extends FieldValues>({  form, nameF
       }}
       render={({ field: { onChange, onBlur, value } }) => (
         <View style={container}>
-          {/* <Text style={{...inputRegisterStyle.label, color: controlColorsOnErrors()}}>{label}</Text> */}
-          <View style={{...inputContainer, backgroundColor: colors.backgroud, borderWidth: 1, borderColor: errorMessage ? colors.error : colors.divider}}>
+          <View style={themedInputContainer}>
             <TextInput
-              style={{...input, color: colors.text}}
-              placeholderTextColor={`${colors.text}30`}
+              style={{ ...input, color: colors.text }}
+              placeholderTextColor={`${colors.text}50`}
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              selectionColor='#000000'
+              selectionColor={colors.text}
               readOnly={readonly}
               placeholder={placeHolder}
-              secureTextEntry={secureTextEntry}
+              secureTextEntry={isSecure}
             />
+            {secureTextEntry &&
+              <TouchableOpacity onPress={() => setIsSecure(!isSecure)}>
+
+                <SvgEye isSlash={isSecure} />
+              </TouchableOpacity>
+            }
           </View>
           {errorMessage && <Text style={{ color: borderColor, fontWeight: 'bold' }}>{errorMessage as string}</Text>}
         </View>

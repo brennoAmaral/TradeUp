@@ -1,9 +1,9 @@
-import { darkTheme } from "@/theme/theme-config";
+import useTheme from "@/theme/use-theme";
 import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
 
 export default function useRootLayout() {
-
-  const backgroundColor = darkTheme.colors.background;
+  const theme = useTheme()
+  const backgroundColor = theme.colors.backgroud;
 
   const stackOptions:NativeStackNavigationOptions  = {
     headerStyle: {

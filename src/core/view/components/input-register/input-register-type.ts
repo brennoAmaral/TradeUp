@@ -4,6 +4,7 @@ export interface InputRegisterParams<fields extends FieldValues>{
   nameField: Path<fields>
   // label: string
   form: UseFormReturn<fields>
+  maxLength?: number
   secureTextEntry?: boolean
   placeHolder: string
   iconRight?: React.ReactNode

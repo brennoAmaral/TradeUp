@@ -21,7 +21,7 @@ const inputRegisterStyle = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 20,
   },
   iconContainer: {
     justifyContent: 'center',
