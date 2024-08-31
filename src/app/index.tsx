@@ -1,7 +1,6 @@
-import LoginPage from "../core/view/pages/login/login";
+import LoginPage from "@/pages/login/login";
 
-
-export default function App() {
+export default function Login() {
   return (
   <LoginPage />
 );

@@ -1,6 +1,7 @@
-import { EntityAuthenticate } from "../../../domain/entities/auth/authenticate-entity";
-import IAuthenticateResponse from "../../../domain/http/auth/authenticate-type";
+import { EntityAuthenticate } from "@/entities/auth/authenticate-entity";
 
 
 export interface DTOAuthenticateParams extends EntityAuthenticate{}
-export interface DTOAuthenticateResponse extends IAuthenticateResponse{}
+export interface DTOAuthenticateResponse {
+  token:string
+}
