@@ -1,5 +1,5 @@
 
-const blue = '#3190e8';
+const blue = '#1448b0';
 const lightBlue = '#66a9f0';
 const opacityBlue = `${blue}30`
 const darkBlue = '#073495';

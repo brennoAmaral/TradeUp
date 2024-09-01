@@ -1,12 +1,10 @@
 import inputRegisterStyle from "@/components/input-register/input-register-style"
 import { InputRegisterParams } from "@/components/input-register/input-register-type"
 import useTheme from "@/theme/use-theme"
-import { useState } from "react"
 import { FieldValues } from "react-hook-form"
 
 
 export default function useInputRegister<fields extends FieldValues>({form, nameField}:Pick<InputRegisterParams<fields>, 'form' | 'nameField'>){
-  const [isSecure, setIsSecure] = useState<boolean>(false)
 
   const { colors } = useTheme()
   
@@ -23,7 +21,5 @@ export default function useInputRegister<fields extends FieldValues>({form, name
     borderColor,
     themedInputContainer,
     errorMessage,
-    isSecure,
-    setIsSecure
   }
 }
