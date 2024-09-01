@@ -3,7 +3,8 @@ import tradeUpUseCases from '@/usecases/trade-up-use-cases';
 import { validatorAuthenticateSchema } from '@/validators/validator-authenticate';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Router } from "expo-router";
-import { useState } from 'react';
+import * as SecureStore from 'expo-secure-store';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 
 export default function useLoginPage(router: Router){
@@ -26,18 +27,18 @@ export default function useLoginPage(router: Router){
     }
   }
 
-  // useEffect(()=>{
-  //   async function checkToken(){
-  //     const token = await getItem('API_TOKEN_TRADE_UP')
-  //     if(!token)return
-  //     router.push('/Home')
-  //   }
+  useEffect(()=>{
+    async function checkToken(){
+      const token = await SecureStore.getItem('API_TOKEN_TRADE_UP')
+      if(!token)return
+      router.push('/Home')
+    }
 
-  //   setTimeout(() => {
-  //     checkToken();
-  //   }, 1000);
-  // },[])
-  
+    setTimeout(() => {
+      checkToken();
+    }, 1000);
+  },[])
+
   return {
     onSubmit,
     form,
