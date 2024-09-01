@@ -2,13 +2,19 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "paths": {
       "@/*": [
-        "./*"
+        // "./src/app/*",
+        "./src/core/view/*",
+        "./src/core/application/*",
+        "./src/core/domain/*",
       ]
     }
   },
   "include": [
+
+    "*.ts",
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
