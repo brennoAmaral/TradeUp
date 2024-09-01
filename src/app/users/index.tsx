@@ -1,11 +1,11 @@
 import { View } from "react-native";
 import { Text } from "react-native-paper";
 
-export default function Home() {
+export default function Users() {
   return (
     <View>
       <Text>
-        home
+        users
       </Text>
     </View>
   );

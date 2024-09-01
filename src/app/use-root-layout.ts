@@ -16,7 +16,7 @@ export default function useRootLayout() {
   };
 
   const screenOptions:NativeStackNavigationOptions = {
-    title: "Login",
+    headerShown: false,
     contentStyle: {
       backgroundColor: backgroundColor,
     },

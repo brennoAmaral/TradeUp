@@ -3,8 +3,7 @@ import tradeUpUseCases from '@/usecases/trade-up-use-cases';
 import { validatorAuthenticateSchema } from '@/validators/validator-authenticate';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Router } from "expo-router";
-import * as SecureStore from 'expo-secure-store';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 
 export default function useLoginPage(router: Router){
@@ -17,6 +16,7 @@ export default function useLoginPage(router: Router){
     },
     resolver: yupResolver(validatorAuthenticateSchema),
   })
+
   const onSubmit: SubmitHandler<DTOAuthenticateParams> = async (data)=> {
     setFailedMessage('')
     setIsLoading(true)
@@ -27,17 +27,17 @@ export default function useLoginPage(router: Router){
     }
   }
 
-  useEffect(()=>{
-    async function checkToken(){
-      const token = await SecureStore.getItem('API_TOKEN_TRADE_UP')
-      if(!token)return
-      router.push('/Home')
-    }
+  // useEffect(()=>{
+  //   async function checkToken(){
+  //     const token = await SecureStore.getItem('API_TOKEN_TRADE_UP')
+  //     if(!token)return
+  //     router.push('/users')
+  //   }
 
-    setTimeout(() => {
-      checkToken();
-    }, 1000);
-  },[])
+  //   setTimeout(() => {
+  //     checkToken();
+  //   }, 1); 
+  // },[])
 
   return {
     onSubmit,
