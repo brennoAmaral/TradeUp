@@ -16,15 +16,6 @@ const usersPageStyle = StyleSheet.create({
     borderRadius: 500,
     marginRight: 10,
   },
-  viewError:{
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'center'
-  },
-  textError:{
-    fontWeight: 'semibold',
-    fontSize: 16,
-  }
 });
 
 export default usersPageStyle

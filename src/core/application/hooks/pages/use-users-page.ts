@@ -9,13 +9,11 @@ export default function useUsersPage() {
     queryKey: ["users"],
     queryFn: async () => users.findAll({ page: page }),
   });
-  const isFetchingOrError = !query.isFetching || !query.data?.data
   useEffect(()=>{
     query.refetch()
   },[page])
   return{
     query,
     setPage,
-    isFetchingOrError
   }
 }
