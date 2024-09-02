@@ -1,6 +1,7 @@
 import Button from "@/components/button/button";
 import Card from "@/components/card/card";
 import InputRegister from "@/components/input-register/input-resgister";
+import Screen from "@/components/Screen/screen";
 import SvgEmail from "@/components/svgs/email-svg";
 import SvgEye from "@/components/svgs/eye-svg";
 import { DTOAuthenticateParams } from "@/DTO/auth/DTO-authenticate";
@@ -22,11 +23,7 @@ export default function LoginPage() {
 
   
   return (
-    <View style={{
-      flex: 1,
-      paddingHorizontal: 20,
-      backgroundColor: theme.colors.backgroud
-    }}>
+    <Screen>
       <View style={{
         flex: 1,
         display: "flex",
@@ -77,6 +74,6 @@ export default function LoginPage() {
           </View>
         </Card>}
       </View>
-    </View>
+    </Screen>
   );
 }

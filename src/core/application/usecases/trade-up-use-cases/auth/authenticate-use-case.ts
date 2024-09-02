@@ -7,5 +7,5 @@ export default async function useCaseTradeUpAuthenticate(params: DTOAuthenticate
   const { token } = await tradeUpRepository.authenticate(params);
   if(!token)return 'E-mail ou senha incorreto!'
   await SecureStore.setItemAsync("API_TOKEN_TRADE_UP", token);
-  router.navigate("/Home");
+  router.navigate("/users");
 }
