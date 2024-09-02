@@ -6,10 +6,10 @@ import ScreenParams from "./screen-type";
 export default function Screen({ children, isScroll, style}: ScreenParams) {
   const { colors } = useTheme()
   const baseScreenStyle = {...screenStyle.baseTemplateScreen, backgroundColor: colors.backgroud, ...style}
-  
+
   if (isScroll) {
     return (
-      <ScrollView style={baseScreenStyle}>
+      <ScrollView style={baseScreenStyle} nestedScrollEnabled={true}>
         {children}
       </ScrollView>
     )

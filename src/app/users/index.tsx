@@ -1,12 +1,7 @@
-import { View } from "react-native";
-import { Text } from "react-native-paper";
+import UsersPage from "@/pages/users/users-page";
 
 export default function Users() {
   return (
-    <View>
-      <Text>
-        users
-      </Text>
-    </View>
+    <UsersPage/>
   );
 }

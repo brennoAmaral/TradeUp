@@ -5,7 +5,7 @@ export default class Fetcher implements IFetcher {
 
   async get<T>(endpoint: string, filters?: Record<string, string>): Promise<T> {
     const params = new URLSearchParams(filters);
-    endpoint = `${this.baseURL}${endpoint}?${params}`;
+    endpoint = `${this.baseURL}${endpoint}?${params}`
     const response = await fetch(endpoint, {
       ...this.config,
       method: "GET",

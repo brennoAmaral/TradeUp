@@ -14,7 +14,7 @@ export default function useInputRegister<fields extends FieldValues>({form, name
   
   const borderColor = errorMessage ? colors.error : colors.primary
 
-  const themedInputContainer = {...inputRegisterStyle.inputContainer, backgroundColor: colors.backgroud, borderWidth: 1, borderColor: errorMessage ? colors.error : colors.divider}
+  const themedInputContainer = {...inputRegisterStyle.inputContainer, backgroundColor: colors.backgroud, borderWidth: 1, borderColor: errorMessage ? colors.error : colors.primary}
   
   return{
     colors,

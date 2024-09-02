@@ -27,18 +27,6 @@ export default function useLoginPage(router: Router){
     }
   }
 
-  // useEffect(()=>{
-  //   async function checkToken(){
-  //     const token = await SecureStore.getItem('API_TOKEN_TRADE_UP')
-  //     if(!token)return
-  //     router.push('/users')
-  //   }
-
-  //   setTimeout(() => {
-  //     checkToken();
-  //   }, 1); 
-  // },[])
-
   return {
     onSubmit,
     form,

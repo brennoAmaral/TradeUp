@@ -8,8 +8,8 @@ export default function Layout() {
   return (
     <QueryClientProvider client={cacheConfig}>
         <Stack
-          screenOptions={stackOptions}>
-          <Stack.Screen name="index" options={{ headerShown: false }}/>
+          screenOptions={{...stackOptions, headerShown: false}}>
+          <Stack.Screen name="index" options={{...screenOptions, headerShown: false}}/>
         </Stack>
     </QueryClientProvider>
   )

@@ -1,19 +1,14 @@
 
 const blue = '#1448b0';
-const lightBlue = '#66a9f0';
 const opacityBlue = `${blue}30`
 const darkBlue = '#073495';
 
-const darkBackground = '#14141c';
-const lightBackground = '#f0f8ff';
-const darkSurface = '#1e1e1e';
-const lightSurface = '#ffffff';
+
 const error = '#e34b4b';
-const onError = '#ffffff';
 
 const fonts = {
     bodyLarge: {
-      fontSize: 12, 
+      fontSize: 18, 
     },
     bodyMedium: {
       fontSize: 16,
@@ -60,7 +55,7 @@ export const lightTheme = {
 export const darkTheme = {
   fonts,
   colors: {
-    primary: blue,
+    primary: '#3191eb',
     darkPrimary: darkBlue,
     divider: '#313538',
     opacityPrimary: opacityBlue,

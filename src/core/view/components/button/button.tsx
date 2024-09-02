@@ -9,12 +9,12 @@ export default function Button({title,onPress, iconLeft, iconRight, isLoading = 
   const { touchable, text } = buttonStyle
   const {colors} = useTheme()
   const styleTouchable = {...touchable, backgroundColor: disabled ? colors.divider : colors.primary }
-  const styleText = {...text, color: disabled ? '#8a8a8a' : '#FFF' }
+  const styleText = {...text, color: disabled ? '#8a8a8a' : colors.backgroud }
 
   if(isLoading){
     return(
     <TouchableOpacity style={styleTouchable} disabled={disabled}>
-      <Spinner color={'#fff'} size={22}/>
+      <Spinner color={colors.backgroud} size={30}/>
     </TouchableOpacity>
     )
   }
