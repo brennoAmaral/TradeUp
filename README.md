@@ -57,4 +57,3 @@ ou que você instale o aplicativo do expo em seu celular e leia o qr code que se
 npm Start
 
 ```
-teste
