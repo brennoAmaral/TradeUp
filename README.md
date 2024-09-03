@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# Projeto Expo com React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto é uma aplicação móvel desenvolvido com React Native e gerenciada pelo Expo. O Expo é uma ferramenta que simplifica o desenvolvimento e o teste de aplicativos React Native.
 
-## Get started
+## Pré-requisitos
 
-1. Install dependencies
+Antes de começar, certifique-se de ter o Node.js e o npm (Node Package Manager) instalados em seu sistema. Você pode baixar e instalar o Node.js a partir de [nodejs.org](https://nodejs.org/), que inclui o npm.
 
-   ```bash
-   npm install
-   ```
+## Instalação
 
-2. Start the app
+Siga os passos abaixo para inicializar e executar o projeto.
 
-   ```bash
-    npx expo start
-   ```
+### 1. Clone o Repositório
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Escolha um diretório do seu computador e abro o bash(ou qualquer interpretador de comando que execute git) e clone o repositório do projeto usando o comando:
 
 ```bash
-npm run reset-project
+
+git clone https://github.com/brennoAmaral/TradeUp.git
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Acesse a pasta do projeto
 
-## Learn more
+Em seu terminal execute:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+cd trade-up
 
-## Join the community
+```
 
-Join our community of developers creating universal apps.
+### 3. Instalando dependências 
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Em seu terminal execute:
+
+```bash
+
+npm install
+
+```
+
+### 4. Variaveis de ambiente 
+
+Crie um arquivo na raiz do projeto e a nomeie com ".env" e dentro dele adicione: 
+
+EXPO_PUBLIC_API_URL=https://dominio_do_teste/api/
+
+
+### 5. Iniciando o projeto 
+
+Antes de iniciar o projeto é necessário que você possua o android studio instalado 
+ou que você instale o aplicativo do expo em seu celular e leia o qr code que será exibido na tela
+
+```bash
+
+npm Start
+
+```
