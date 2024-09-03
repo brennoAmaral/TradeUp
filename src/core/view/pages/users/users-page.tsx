@@ -4,6 +4,7 @@ import TextTheme from "@/components/text/text";
 import { UserEntity } from "@/entities/users/user-entity";
 import useUsersPage from "@/hooks/pages/use-users-page";
 import useTheme from "@/theme/use-theme";
+import { useRouter } from "expo-router";
 import { Image, ListRenderItemInfo, TouchableOpacity, View } from "react-native";
 import usersPageStyle from "./users-page-style";
 
@@ -12,13 +13,19 @@ interface RenderItem extends UserEntity {
 }
 
 export default function UsersPage() {
+  const router = useRouter()
   const { query, setPage } = useUsersPage()
   const { colors, fonts } = useTheme()
   const { image, templateTable} = usersPageStyle
 
   const RenderItem = ({ item, index}:ListRenderItemInfo<UserEntity>) => {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> router.push({
+        pathname: '/users/[id]',
+        params: {
+          ...item
+        }
+      })}>
         <View style={{
           ...templateTable,
           borderBottomColor: colors.divider,
