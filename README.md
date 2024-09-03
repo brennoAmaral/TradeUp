@@ -6,6 +6,31 @@ Este projeto é uma aplicação móvel desenvolvido com React Native e gerenciad
 
 Antes de começar, certifique-se de ter o Node.js e o npm (Node Package Manager) instalados em seu sistema. Você pode baixar e instalar o Node.js a partir de [nodejs.org](https://nodejs.org/), que inclui o npm.
 
+
+## Estrutura do Projeto
+
+Dentro da pasta `src`, você encontrará a pasta `app`, que é responsável por definir as rotas da aplicação e estilizar o cabeçalho global.
+
+A pasta **Core** é o núcleo do aplicativo e está dividida em três camadas principais:
+
+### View
+
+- **Descrição**: Camada responsável pela apresentação dos dados.
+- **Conteúdo**: Inclui formatadores, componentes, páginas, configurações de temas e recursos (assets).
+
+### Application
+
+- **Descrição**: Armazena toda a lógica de comportamento da aplicação.
+- **Conteúdo**: Contém casos de uso, repositórios, DTOs (Data Transfer Objects), validações de dados, hooks principais e comportamentos específicos dos componentes e páginas.
+
+### Entity
+
+- **Descrição**: Contém o núcleo da aplicação e mecanismos básicos.
+- **Conteúdo**: Inclui um mecanismo flexível para integração com diferentes backends, entidades dos endpoints, factories para mecanismos de busca e configurações de cache.
+
+Esta organização visa proporcionar uma estrutura modular e reutilizável, facilitando a manutenção e evolução do projeto.
+
+
 ## Instalação
 
 Siga os passos abaixo para inicializar e executar o projeto.
@@ -54,6 +79,42 @@ ou que você instale o aplicativo do expo em seu celular e leia o qr code que se
 
 ```bash
 
-npm Start
+npm start
 
 ```
+
+### 5. Como gerar build do projeto 
+
+Instale o CLI do EAS
+
+```bash
+
+npm install -g eas-cli
+
+```
+
+ou
+
+```bash
+
+yarn global add eas-cli
+
+```
+
+Realize o login com sua conta expo
+
+```bash
+
+npx eas login
+
+```
+
+build o projeto
+
+
+```bash
+
+npx eas build -p android
+
+```
+
